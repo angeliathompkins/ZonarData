@@ -275,6 +275,30 @@
             "type": "string",
             "defaultValue": "@{formatDateTime(trigger().outputs.windowEndTime,'yyyy-MM-dd HH:mm:ss')}"
         },
+        "Every10Minutes10V3_properties_pipeline_parameters_NotificationList": {
+            "type": "string",
+            "defaultValue": "wayne.snyder@mariner-usa.com"
+        },
+        "Every10Minutes10V3_properties_pipeline_parameters_ETLWindowStart": {
+            "type": "string",
+            "defaultValue": "@{formatDateTime(addminutes(trigger().outputs.windowEndTime,-10),'yyyy-MM-dd HH:mm:ss')}"
+        },
+        "Every10Minutes10V3_properties_pipeline_parameters_ETLWindowEnd": {
+            "type": "string",
+            "defaultValue": "@{formatDateTime(trigger().outputs.windowEndTime,'yyyy-MM-dd HH:mm:ss')}"
+        },
+        "Every10Mintes20V3_properties_pipeline_parameters_NotificationList": {
+            "type": "string",
+            "defaultValue": "wayne.snyder@mariner-usa.com"
+        },
+        "Every10Mintes20V3_properties_pipeline_parameters_ETLWindowStart": {
+            "type": "string",
+            "defaultValue": "@{formatDateTime(addminutes(trigger().outputs.windowEndTime,-10),'yyyy-MM-dd HH:mm:ss')}"
+        },
+        "Every10Mintes20V3_properties_pipeline_parameters_ETLWindowEnd": {
+            "type": "string",
+            "defaultValue": "@{formatDateTime(trigger().outputs.windowEndTime,'yyyy-MM-dd HH:mm:ss')}"
+        },
         "linkedService1_properties_typeProperties_userName": {
             "type": "string",
             "defaultValue": "Mariner-usa_EXT"
@@ -15385,10 +15409,10 @@
                         "name": "name",
                         "type": "String"
                     },
-                  {
-                    "name": "distance",
-                    "type": "String"
-                  }
+                    {
+                        "name": "distance",
+                        "type": "String"
+                    }
                 ],
                 "typeProperties": {
                     "format": {
@@ -16039,7 +16063,7 @@
             "type": "Microsoft.DataFactory/factories/triggers",
             "apiVersion": "2017-09-01-preview",
             "properties": {
-                "runtimeState": "Started",
+                "runtimeState": "Stopped",
                 "pipeline": {
                     "pipelineReference": {
                         "referenceName": "MasterPipelineZonar5Minute",
@@ -16074,7 +16098,7 @@
             "type": "Microsoft.DataFactory/factories/triggers",
             "apiVersion": "2017-09-01-preview",
             "properties": {
-                "runtimeState": "Started",
+                "runtimeState": "Stopped",
                 "pipeline": {
                     "pipelineReference": {
                         "referenceName": "MasterPipelineZonar5Minute",
@@ -16091,7 +16115,7 @@
                     "frequency": "Minute",
                     "interval": 30,
                     "startTime": "2018-05-07T05:00:00Z",
-                    "endTime": "2018-05-21T05:00:00Z",
+                    "endTime": "2018-06-11T05:00:00Z",
                     "delay": "00:00:00",
                     "maxConcurrency": 1,
                     "retryPolicy": {
@@ -16249,6 +16273,76 @@
             },
             "dependsOn": [
                 "[concat(variables('factoryId'), '/pipelines/MasterPipelineFact')]"
+            ]
+        },
+        {
+            "name": "[concat(parameters('factoryName'), '/Every10Minutes10V3')]",
+            "type": "Microsoft.DataFactory/factories/triggers",
+            "apiVersion": "2017-09-01-preview",
+            "properties": {
+                "runtimeState": "Started",
+                "pipeline": {
+                    "pipelineReference": {
+                        "referenceName": "MasterPipelineZonar5Minute",
+                        "type": "PipelineReference"
+                    },
+                    "parameters": {
+                        "NotificationList": "[parameters('Every10Minutes10V3_properties_pipeline_parameters_NotificationList')]",
+                        "ETLWindowStart": "[parameters('Every10Minutes10V3_properties_pipeline_parameters_ETLWindowStart')]",
+                        "ETLWindowEnd": "[parameters('Every10Minutes10V3_properties_pipeline_parameters_ETLWindowEnd')]"
+                    }
+                },
+                "type": "TumblingWindowTrigger",
+                "typeProperties": {
+                    "frequency": "Minute",
+                    "interval": 30,
+                    "startTime": "2018-05-14T04:50:00Z",
+                    "endTime": "2018-06-11T04:50:00Z",
+                    "delay": "00:00:00",
+                    "maxConcurrency": 1,
+                    "retryPolicy": {
+                        "count": 1,
+                        "intervalInSeconds": 60
+                    }
+                }
+            },
+          "dependsOn": [
+            "[concat(variables('factoryId'), '/pipelines/MasterPipelineZonar5Minute')]"
+          ]
+        },
+        {
+            "name": "[concat(parameters('factoryName'), '/Every10Mintes20V3')]",
+            "type": "Microsoft.DataFactory/factories/triggers",
+            "apiVersion": "2017-09-01-preview",
+            "properties": {
+                "runtimeState": "Started",
+                "pipeline": {
+                    "pipelineReference": {
+                        "referenceName": "MasterPipelineZonar5Minute",
+                        "type": "PipelineReference"
+                    },
+                    "parameters": {
+                        "NotificationList": "[parameters('Every10Mintes20V3_properties_pipeline_parameters_NotificationList')]",
+                        "ETLWindowStart": "[parameters('Every10Mintes20V3_properties_pipeline_parameters_ETLWindowStart')]",
+                        "ETLWindowEnd": "[parameters('Every10Mintes20V3_properties_pipeline_parameters_ETLWindowEnd')]"
+                    }
+                },
+                "type": "TumblingWindowTrigger",
+                "typeProperties": {
+                    "frequency": "Minute",
+                    "interval": 30,
+                    "startTime": "2018-05-14T05:00:00Z",
+                    "endTime": "2018-06-11T05:00:00Z",
+                    "delay": "00:00:00",
+                    "maxConcurrency": 1,
+                    "retryPolicy": {
+                        "count": 1,
+                        "intervalInSeconds": 60
+                    }
+                }
+            },
+            "dependsOn": [
+                "[concat(variables('factoryId'), '/pipelines/MasterPipelineZonar5Minute')]"
             ]
         },
         {
