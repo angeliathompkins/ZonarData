@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZonarData", "ZonarData\ZonarData.csproj", "{A42F010C-FF52-4D31-8566-8756517431FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceXMLToJson", "WebServiceXMLToJson\WebServiceXMLToJson.csproj", "{53E830BB-01CB-47BA-8873-6F7BEA492C92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebServiceXMLToJson", "WebServiceXMLToJson\WebServiceXMLToJson.csproj", "{53E830BB-01CB-47BA-8873-6F7BEA492C92}"
+EndProject
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "PikeTeamADFResourceGroup", "PikeTeamADFResourceGroup\PikeTeamADFResourceGroup.deployproj", "{9221FF29-015B-412D-8CF9-DBF91646E502}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{53E830BB-01CB-47BA-8873-6F7BEA492C92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53E830BB-01CB-47BA-8873-6F7BEA492C92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53E830BB-01CB-47BA-8873-6F7BEA492C92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9221FF29-015B-412D-8CF9-DBF91646E502}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9221FF29-015B-412D-8CF9-DBF91646E502}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9221FF29-015B-412D-8CF9-DBF91646E502}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9221FF29-015B-412D-8CF9-DBF91646E502}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

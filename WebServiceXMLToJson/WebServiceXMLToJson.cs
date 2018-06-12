@@ -23,6 +23,8 @@ namespace WebServiceXMLToJson
             dynamic data;
             string Container;
             string FileLocation;
+            string Format;
+            string jsonText;
 
             try
             {
@@ -38,6 +40,7 @@ namespace WebServiceXMLToJson
                 string StorageConnectionString = data.StorageConnectionString;
                  Container = data.Container;
           FileLocation = data.FileLocation;
+                Format = data.Format;
 
                 /*@"http://pik3599.zonarsystems.net/interface.php?action=showposition&operation=current&format=xml&logvers=3&version=2";
             string ServiceUserName = "fw_upload";
@@ -66,14 +69,21 @@ namespace WebServiceXMLToJson
                 //XmlReader x = XmlReader.Create(response.GetResponseStream());
                 var MainArray = reader.ReadToEnd();
 
-                XmlDocument Docs = new XmlDocument();
+                if (Format.ToUpper() == "XML")
+                {
+                    XmlDocument Docs = new XmlDocument();
 
-                Docs.LoadXml(MainArray);
-                string jsonText = JsonConvert.SerializeXmlNode(Docs);
-                dynamic dynJson = JObject.Parse(jsonText);
-                
-                dynJson.CreateDate = DateTime.UtcNow;
-                jsonText = dynJson.ToString();
+                    Docs.LoadXml(MainArray);
+                    jsonText = JsonConvert.SerializeXmlNode(Docs);
+                    dynamic dynJson = JObject.Parse(jsonText);
+
+                    dynJson.CreateDate = DateTime.UtcNow;
+                    jsonText = dynJson.ToString();
+                }
+                else
+                {
+                    jsonText = MainArray;
+                }
                 var acct = CloudStorageAccount.Parse(StorageConnectionString);
                 var client = acct.CreateCloudBlobClient();
 
@@ -83,9 +93,10 @@ namespace WebServiceXMLToJson
                 blob.UploadText(jsonText);
             }catch(Exception e)
             {
+                log.Error(e.Message);
                return req.CreateErrorResponse(HttpStatusCode.BadRequest, e.Message);
              
-                throw e;
+              
             }
            return  req.CreateResponse(HttpStatusCode.OK);
 

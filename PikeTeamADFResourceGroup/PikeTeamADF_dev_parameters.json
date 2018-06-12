@@ -1,0 +1,225 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "factoryName": {
+      "value": "piketeamadftest"
+    },
+    "piketeamasdw_connectionString": {
+      "value": ""
+    },
+    "linkedService1_password": {
+      "value": ""
+    },
+    "ZonarJsonFiles_connectionString": {
+      "value": ""
+    },
+    "FTPTest_properties_typeProperties_folderPath": {
+      "value": ""
+    },
+    "AzureBlob1_properties_typeProperties_fileName": {
+      "value": "assettestj.json"
+    },
+    "AzureBlob1_properties_typeProperties_folderPath": {
+      "value": "asset/2016/04/01"
+    },
+    "ZonarPTOJsonBlob_properties_typeProperties_fileName": {
+      "value": "@dataset().FileLocation"
+    },
+    "ZonarPTOJsonBlob_properties_typeProperties_folderPath": {
+      "value": "@dataset().Container"
+    },
+    "AzurePTODataLakeStoreFile_properties_typeProperties_fileName": {
+      "value": "@dataset().FileLocation"
+    },
+    "AzurePTODataLakeStoreFile_properties_typeProperties_folderPath": {
+      "value": "@dataset().Container"
+    },
+    "ZonarPathJsonBlob_properties_typeProperties_fileName": {
+      "value": "@dataset().FileLocation"
+    },
+    "ZonarPathJsonBlob_properties_typeProperties_folderPath": {
+      "value": "@dataset().Container"
+    },
+    "ZonarPathADLFile_properties_typeProperties_fileName": {
+      "value": "@dataset().FileLocation"
+    },
+    "ZonarPathADLFile_properties_typeProperties_folderPath": {
+      "value": "@dataset().Container"
+    },
+    "ZonarPathJsonBlob2bakup_properties_typeProperties_fileName": {
+      "value": "@dataset().FileLocation"
+    },
+    "ZonarPathJsonBlob2bakup_properties_typeProperties_folderPath": {
+      "value": "@dataset().Container"
+    },
+    "ZonarPathADLBackup3JsonBlob3_properties_typeProperties_fileName": {
+      "value": "zonarpath_20180515140936"
+    },
+    "ZonarPathADLBackup3JsonBlob3_properties_typeProperties_folderPath": {
+      "value": "zonarpath"
+    },
+    "ZonarPathJsonBlob2V38backup_properties_typeProperties_fileName": {
+      "value": "@dataset().FileLocation"
+    },
+    "ZonarPathJsonBlob2V38backup_properties_typeProperties_folderPath": {
+      "value": "@dataset().Container"
+    },
+    "TestAzureDataLakeStoreFile1_properties_typeProperties_fileName": {
+      "value": "junk"
+    },
+    "TestAzureDataLakeStoreFile1_properties_typeProperties_folderPath": {
+      "value": "zonarpath"
+    },
+    "TestAzureBlob2_properties_typeProperties_fileName": {
+      "value": "zonarpath_20180515145908"
+    },
+    "TestAzureBlob2_properties_typeProperties_folderPath": {
+      "value": "zonarpath/2018-05-15"
+    },
+    "ZonarCurrentLocationJsonBlob_properties_typeProperties_fileName": {
+      "value": "@dataset().FileLocation"
+    },
+    "ZonarCurrentLocationJsonBlob_properties_typeProperties_folderPath": {
+      "value": "@dataset().Container"
+    },
+    "ZonarCurrentLocationADLFile_properties_typeProperties_fileName": {
+      "value": "@dataset().FileLocation"
+    },
+    "ZonarCurrentLocationADLFile_properties_typeProperties_folderPath": {
+      "value": "@dataset().Container"
+    },
+    "TestAzureBlob3_properties_typeProperties_fileName": {
+      "value": "zonarpath_20180515145908"
+    },
+    "TestAzureBlob3_properties_typeProperties_folderPath": {
+      "value": "zonarpath/2018-05-15"
+    },
+    "ZonarMileageJsonBLob_properties_typeProperties_fileName": {
+      "value": "mileage_20180515181419"
+    },
+    "ZonarMileageJsonBLob_properties_typeProperties_folderPath": {
+      "value": "zonarmileage/2018-05-15"
+    },
+    "ZonarPathCSVblob_properties_typeProperties_fileName": {
+      "value": "@dataset().FileLocation"
+    },
+    "ZonarPathCSVblob_properties_typeProperties_folderPath": {
+      "value": "@dataset().Container"
+    },
+    "AzureDataLakeStoreFile1_properties_typeProperties_fileName": {
+      "value": "Mariner Data SetPD.csv"
+    },
+    "AzureDataLakeStoreFile1_properties_typeProperties_folderPath": {
+      "value": "ZonarPathcsv"
+    },
+    "ZonarPathCSVBlobV38_properties_typeProperties_fileName": {
+      "value": "@dataset().FileLocation"
+    },
+    "ZonarPathCSVBlobV38_properties_typeProperties_folderPath": {
+      "value": "@dataset().Container"
+    },
+    "ZonarPathADLFileV38_properties_typeProperties_fileName": {
+      "value": "@dataset().FileLocation"
+    },
+    "ZonarPathADLFileV38_properties_typeProperties_folderPath": {
+      "value": "@dataset().Container"
+    },
+    "BackFillFrom5-5V3Temp_properties_pipeline_parameters_NotificationList": {
+      "value": "wayne.snyder@mariner-"
+    },
+    "BackFillFrom5-5V3Temp_properties_pipeline_parameters_ETLWindowStart": {
+      "value": "@{formatDateTime(trigger().outputs.windowStartTime,'yyyy-MM-dd HH:mm:ss')}"
+    },
+    "BackFillFrom5-5V3Temp_properties_pipeline_parameters_ETLWindowEnd": {
+      "value": "@{formatDateTime(trigger().outputs.windowEndTime,'yyyy-MM-dd HH:mm:ss')}"
+    },
+    "Every15Minutes15V3_properties_pipeline_parameters_NotificationList": {
+      "value": "wayne.snyder@mariner-usa.com"
+    },
+    "Every15Minutes15V3_properties_pipeline_parameters_ETLWindowStart": {
+      "value": "@{formatDateTime(addminutes(trigger().outputs.windowEndTime,-15),'yyyy-MM-dd HH:mm:ss')}"
+    },
+    "Every15Minutes15V3_properties_pipeline_parameters_ETLWindowEnd": {
+      "value": "@{formatDateTime(trigger().outputs.windowEndTime,'yyyy-MM-dd HH:mm:ss')}"
+    },
+    "Every15Minutes00V3_properties_pipeline_parameters_NotificationList": {
+      "value": "wayne.snyder@mariner-usa.com"
+    },
+    "Every15Minutes00V3_properties_pipeline_parameters_ETLWindowStart": {
+      "value": "@{formatDateTime(addminutes(trigger().outputs.windowEndTime,-15),'yyyy-MM-dd HH:mm:ss')}"
+    },
+    "Every15Minutes00V3_properties_pipeline_parameters_ETLWindowEnd": {
+      "value": "@{formatDateTime(trigger().outputs.windowEndTime,'yyyy-MM-dd HH:mm:ss')}"
+    },
+    "Daily1300UTC_properties_pipeline_parameters_NotificationList": {
+      "value": "wayne.snyder@mariner-usa.com"
+    },
+    "Daily1300UTC_properties_pipeline_parameters_ETLWindowStart": {
+      "value": "@{formatDateTime(trigger().outputs.windowStartTime,'yyyy-MM-dd HH:mm:ss')}"
+    },
+    "Daily1300UTC_properties_pipeline_parameters_ETLWindowEnd": {
+      "value": "@{formatDateTime(trigger().outputs.windowEndTime,'yyyy-MM-dd HH:mm:ss')}"
+    },
+    "Every10Minutes10V2_properties_pipeline_parameters_NotificationList": {
+      "value": "wayne.snyder@mariner-usa.com"
+    },
+    "Every10Minutes10V2_properties_pipeline_parameters_ETLWindowStart": {
+      "value": "@{formatDateTime(addminutes(trigger().outputs.windowEndTime,-10),'yyyy-MM-dd HH:mm:ss')}"
+    },
+    "Every10Minutes10V2_properties_pipeline_parameters_ETLWindowEnd": {
+      "value": "@{formatDateTime(trigger().outputs.windowEndTime,'yyyy-MM-dd HH:mm:ss')}"
+    },
+    "Every10Mintes20V2_properties_pipeline_parameters_NotificationList": {
+      "value": "wayne.snyder@mariner-usa.com"
+    },
+    "Every10Mintes20V2_properties_pipeline_parameters_ETLWindowStart": {
+      "value": "@{formatDateTime(addminutes(trigger().outputs.windowEndTime,-10),'yyyy-MM-dd HH:mm:ss')}"
+    },
+    "Every10Mintes20V2_properties_pipeline_parameters_ETLWindowEnd": {
+      "value": "@{formatDateTime(trigger().outputs.windowEndTime,'yyyy-MM-dd HH:mm:ss')}"
+    },
+    "Every10Minutes00V2_properties_pipeline_parameters_NotificationList": {
+      "value": "wayne.snyder@mariner-usa.com"
+    },
+    "Every10Minutes00V2_properties_pipeline_parameters_ETLWindowStart": {
+      "value": "@{formatDateTime(addminutes(trigger().outputs.windowEndTime,-10),'yyyy-MM-dd HH:mm:ss')}"
+    },
+    "Every10Minutes00V2_properties_pipeline_parameters_ETLWindowEnd": {
+      "value": "@{formatDateTime(trigger().outputs.windowEndTime,'yyyy-MM-dd HH:mm:ss')}"
+    },
+    "Daily 1300UTCTemp_properties_pipeline_parameters_NotificationList": {
+      "value": "wayne.snyder@mariner-usa.com"
+    },
+    "Daily 1300UTCTemp_properties_pipeline_parameters_ETLWindowStart": {
+      "value": "@{formatDateTime(trigger().outputs.windowStartTime,'yyyy-MM-dd HH:mm:ss')}"
+    },
+    "Daily 1300UTCTemp_properties_pipeline_parameters_ETLWindowEnd": {
+      "value": "@{formatDateTime(trigger().outputs.windowEndTime,'yyyy-MM-dd HH:mm:ss')}"
+    },
+    "tempUTC1300_properties_pipeline_parameters_NotificationList": {
+      "value": "wayne.snyder@mariner-usa.com"
+    },
+    "tempUTC1300_properties_pipeline_parameters_ETLWindowStart": {
+      "value": "@{formatDateTime(trigger().outputs.windowStartTime,'yyyy-MM-dd HH:mm:ss')}"
+    },
+    "tempUTC1300_properties_pipeline_parameters_ETLWindowEnd": {
+      "value": "@{formatDateTime(trigger().outputs.windowEndTime,'yyyy-MM-dd HH:mm:ss')}"
+    },
+    "linkedService1_properties_typeProperties_userName": {
+      "value": "Mariner-usa_EXT"
+    },
+    "PikeTeamADLS_properties_typeProperties_dataLakeStoreUri": {
+      "value": "https://piketeamadls.azuredatalakestore.net/webhdfs/v1"
+    },
+    "PikeTeamADLS_properties_typeProperties_tenant": {
+      "value": "9fbce44f-d64c-4f7e-bbe0-19479c36278b"
+    },
+    "PikeTeamADLS_properties_typeProperties_subscriptionId": {
+      "value": "3769e455-2e41-407b-b8dd-cd711324b864"
+    },
+    "PikeTeamADLS_properties_typeProperties_resourceGroupName": {
+      "value": "PikeTEAM"
+    }
+  }
+}
